@@ -1,69 +1,197 @@
-# Prerequisites
-*.d
+# =============================================================================
+# Intern Management System - .gitignore
+# Target stack: C++11 / MinGW-w64 (TDM-GCC) / Embarcadero Dev-C++ / Windows
+# =============================================================================
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Linker files
-*.ilk
-
-# Debugger Files
-*.pdb
-
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-*.so.*
-
-
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
+# -----------------------------------------------------------------------------
+# Compiled binaries and object files
+# -----------------------------------------------------------------------------
 *.exe
+*.exe.*
 *.out
 *.app
+*.com
+*.so
+*.dll
+*.dylib
+*.a
+*.lib
+*.o
+*.obj
+*.obj.*
+*.ko
+*.elf
 
-# Build directories
-build/
-Build/
-build-*/
+# -----------------------------------------------------------------------------
+# Precompiled headers (Dev-C++ / MinGW .gch - very large, regenerate on build)
+# -----------------------------------------------------------------------------
+*.gch
+*.pch
+*.pdb
+*.idb
+*.ilk
+*.exp
+*.map
 
-# CMake generated files
-CMakeFiles/
-CMakeCache.txt
-cmake_install.cmake
-Makefile
-install_manifest.txt
-compile_commands.json
+# Build output directories
+/build/
+/bin/
+/obj/
+/Debug/
+/Release/
+/output/
+*.manifest
 
-# Temporary files
-*.tmp
-*.log
+# -----------------------------------------------------------------------------
+# Embarcadero Dev-C++ project / IDE state
+# -----------------------------------------------------------------------------
+# Editor-only state: cursor positions and window layout. Machine specific.
+*.layout
+# Machine specific: hardcodes C:/Program Files (x86)/Embarcadero/... paths.
+Makefile.win
+# IDE backup and autosave files
 *.bak
-*.swp
+*.tmp
+*.autosave
+*.~src
+*.orig
+*.rej
+*.ddp
+*.dproj
+*.dproj.local
+*.cbp
+*.cbproj
+*.tds
+*.tvs
+*.groupproj
+*.bdsgroup
+*.bdsproj
+*.map
+# Compiled resource files
+*.res
+*.drc
+*.dfm
+*.fmx
+*.frx
+*.res.drc
 
-# vcpkg
-vcpkg_installed/
+# -----------------------------------------------------------------------------
+# Visual Studio Code
+# -----------------------------------------------------------------------------
+# launch.json contains absolute local paths (e.g. C:/Users/<name>/...),
+# so it is intentionally not tracked.
+.vscode/launch.json
+.vscode/settings.json
+.vscode/tasks.json
+.vscode/*.code-workspace
+*.code-workspace
+# Note: .vscode/c_cpp_properties.json and .vscode/extensions.json are portable
+# and ARE tracked on purpose.
 
-# debug information files
-*.dwo
-
-# test output & cache
-Testing/
+# -----------------------------------------------------------------------------
+# Other IDEs / editors
+# -----------------------------------------------------------------------------
+.idea/
+*.iml
+*.ipr
+*.iws
+.cproject
+.project
+.settings/
+*.sublime-project
+*.sublime-workspace
 .cache/
+*.swp
+*.swo
+*~
+.\#*
+\#*\#
+
+# -----------------------------------------------------------------------------
+# OS-generated files
+# -----------------------------------------------------------------------------
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+*.stackdump
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+.fseventsd
+# Linux
+.directory
+.Trash-*
+*~
+
+# -----------------------------------------------------------------------------
+# Credentials and environment
+# -----------------------------------------------------------------------------
+# This project currently uses no environment variables and has no .env file.
+# These entries are kept so that secrets are never committed if .env support
+# is added later.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.pfx
+*.p12
+*.keystore
+credentials.json
+secrets.json
+secrets.yml
+secrets.yaml
+
+# -----------------------------------------------------------------------------
+# Logs, temporary files and debug output
+# -----------------------------------------------------------------------------
+*.log
+logs/
+*.tmp
+*.temp
+*.bak
+*.orig
+*.dmp
+*.stackdump
+core
+core.*
+
+# -----------------------------------------------------------------------------
+# Test and coverage output
+# -----------------------------------------------------------------------------
+# No test framework is configured yet. These entries are here so that adding
+# one later does not require another .gitignore change.
+*.gcda
+*.gcno
+*.gcov
+*.gct
+coverage/
+Testing/
+*.trx
+*.cover
+*.coverxml
+htmlcov/
+
+# -----------------------------------------------------------------------------
+# Large generated archives and installers
+# -----------------------------------------------------------------------------
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.7z
+*.rar
+*.iso
+*.msi
+*.deb
+*.rpm
+*.jar
+*.war
